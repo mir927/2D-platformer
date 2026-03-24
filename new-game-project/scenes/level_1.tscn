@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=4 uid="uid://l1dhtqji1d6x"]
+[gd_scene load_steps=7 format=4 uid="uid://l1dhtqji1d6x"]
 
 [ext_resource type="Texture2D" uid="uid://bdglpujlv1hi5" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_rus8k"]
 [ext_resource type="TileSet" uid="uid://pngokbeufoc3" path="res://Sprites/Tiles/new_tile_set.tres" id="2_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="3_4nkto"]
+[ext_resource type="PackedScene" uid="uid://cohiqpndtgam" path="res://scenes/enemy.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://cpsebg2lxc8ax" path="res://scenes/coin.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://d1tl2a8rbe88u" path="res://scenes/end_flag.tscn" id="6_fcfvj"]
 
 [node name="Main" type="Node2D"]
 
@@ -16,3 +19,31 @@ tile_set = ExtResource("2_5xbjy")
 
 [node name="Player" parent="." instance=ExtResource("3_4nkto")]
 position = Vector2(-7, 1)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("5_4nkto")]
+position = Vector2(98, -9)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("5_4nkto")]
+position = Vector2(207, -9)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("5_4nkto")]
+position = Vector2(450, -14)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("5_4nkto")]
+position = Vector2(365, -14)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("4_5xbjy")]
+position = Vector2(0, 4)
+
+[node name="Enemy" parent="Enemies/Enemy" instance=ExtResource("4_5xbjy")]
+position = Vector2(59, 2)
+
+[node name="Enemy2" parent="Enemies/Enemy" instance=ExtResource("4_5xbjy")]
+position = Vector2(119, 0)
+
+[node name="EndFlag" parent="." instance=ExtResource("6_fcfvj")]
+position = Vector2(569, -9)
