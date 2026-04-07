@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbvbfgsytow76"]
+
+[ext_resource type="Script" uid="uid://bey3d26vg4bbp" path="res://menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://bdglpujlv1hi5" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_yqeox"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yqeox"]
+font_size = 48
+font_color = Color(1, 0.41000003, 0.41000003, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -135.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjb58")
+
+[node name="Backround" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -43.0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 1069.0
+texture = ExtResource("1_yqeox")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -379.49994
+offset_top = -192.0
+offset_right = 96.50006
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5760095, 2.125532)
+text = "2D Platformer Game"
+label_settings = SubResource("LabelSettings_yqeox")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playbutton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.5
+offset_top = -15.5
+offset_right = 86.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "play"
+
+[node name="Quitbutton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.558
+offset_left = -158.5
+offset_top = 57.0
+offset_right = 86.5
+offset_bottom = 28.607971
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[connection signal="pressed" from="playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="pressed" from="Quitbutton" to="." method="_on_quitbutton_pressed"]

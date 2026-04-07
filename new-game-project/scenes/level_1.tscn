@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://l1dhtqji1d6x"]
+[gd_scene load_steps=9 format=4 uid="uid://l1dhtqji1d6x"]
 
 [ext_resource type="Texture2D" uid="uid://bdglpujlv1hi5" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_rus8k"]
 [ext_resource type="TileSet" uid="uid://pngokbeufoc3" path="res://Sprites/Tiles/new_tile_set.tres" id="2_5xbjy"]
@@ -6,11 +6,35 @@
 [ext_resource type="PackedScene" uid="uid://cohiqpndtgam" path="res://scenes/enemy.tscn" id="4_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://cpsebg2lxc8ax" path="res://scenes/coin.tscn" id="5_4nkto"]
 [ext_resource type="PackedScene" uid="uid://d1tl2a8rbe88u" path="res://scenes/end_flag.tscn" id="6_fcfvj"]
+[ext_resource type="Script" uid="uid://d36h0j3k6gmpt" path="res://backround_parallax.gd" id="6_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://bjpenfck6047x" path="res://scenes/level_2.tscn" id="8_15mv3"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Backround sprite" type="Sprite2D" parent="."]
-position = Vector2(281, -16)
+[node name="Backround" type="Node2D" parent="."]
+script = ExtResource("6_pa8r4")
+
+[node name="Backround sprite" type="Sprite2D" parent="Backround"]
+modulate = Color(0.75072, 0.92, 0.7084, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rus8k")
+
+[node name="Backround sprite4" type="Sprite2D" parent="Backround"]
+modulate = Color(0.75072, 0.92, 0.7084, 1)
+position = Vector2(-523, 1)
+scale = Vector2(0.525, 0.5)
+texture = ExtResource("1_rus8k")
+
+[node name="Backround sprite2" type="Sprite2D" parent="Backround"]
+modulate = Color(0.75072, 0.92, 0.7084, 1)
+position = Vector2(568, -1.0000091)
+scale = Vector2(0.61, 0.49804688)
+texture = ExtResource("1_rus8k")
+
+[node name="Backround sprite3" type="Sprite2D" parent="Backround"]
+modulate = Color(0.75072, 0.92, 0.7084, 1)
+position = Vector2(1260, -2.4999847)
+scale = Vector2(0.744, 0.4951172)
 texture = ExtResource("1_rus8k")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -47,3 +71,4 @@ position = Vector2(119, 0)
 
 [node name="EndFlag" parent="." instance=ExtResource("6_fcfvj")]
 position = Vector2(569, -9)
+scene_to_load = ExtResource("8_15mv3")
